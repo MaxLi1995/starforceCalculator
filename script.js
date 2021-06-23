@@ -3,7 +3,7 @@ document.getElementById("myButton").onclick = function(){
     var myScrolls = parseInt(document.getElementById("myScrolls").value);
     var myLevel = parseInt(document.getElementById("myLevel").value);
     var myBAttack = parseInt(document.getElementById("myBAttack").value);
-    var myTAttack = parseInt(document.getElementById("myTAttack").value) - parseInt(document.getElementById("myFlame").value);;
+    var myTAttack = parseInt(document.getElementById("myTAttack").value) - parseInt(document.getElementById("myFlame").value);
 
 
     if(myBAttack >= myTAttack){
@@ -42,7 +42,7 @@ document.getElementById("myButton").onclick = function(){
                                 myTAttack = myTAttack - 13;
                                 break;
                             default:
-                                myTAttack = Math.ceil(myTAttack/1.02);
+                                myTAttack = Math.ceil((myTAttack - 1)/1.02);
                                 break;
                         }
                         break;
@@ -70,7 +70,7 @@ document.getElementById("myButton").onclick = function(){
                                 myTAttack = myTAttack - 9;
                                 break;
                             default:
-                                myTAttack = Math.floor(myTAttack/1.02);
+                                myTAttack = Math.ceil((myTAttack - 1)/1.02);
                                 break;
                         }
                         break;
@@ -98,7 +98,7 @@ document.getElementById("myButton").onclick = function(){
                                 myTAttack = myTAttack - 8;
                                 break;
                             default:
-                                myTAttack = Math.floor(myTAttack/1.02);
+                                myTAttack = Math.ceil((myTAttack - 1)/1.02);
                                 break;
                         }
                         break;
@@ -108,5 +108,5 @@ document.getElementById("myButton").onclick = function(){
         }
         var difference = (myTAttack-myBAttack)/myScrolls;
     }
-    document.getElementById("stuff").innerHTML = difference;
+    document.getElementById("stuff").innerHTML = "average of " + difference +" per scroll."; 
 }
