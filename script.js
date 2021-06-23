@@ -3,7 +3,8 @@ document.getElementById("myButton").onclick = function(){
     var myScrolls = parseInt(document.getElementById("myScrolls").value);
     var myLevel = parseInt(document.getElementById("myLevel").value);
     var myBAttack = parseInt(document.getElementById("myBAttack").value);
-    var myTAttack = parseInt(document.getElementById("myTAttack").value);
+    var myTAttack = parseInt(document.getElementById("myTAttack").value) - parseInt(document.getElementById("myFlame").value);;
+
 
     if(myBAttack >= myTAttack){
         document.getElementById("stuff").innerHTML = "invalid parameters was entered";
@@ -69,7 +70,7 @@ document.getElementById("myButton").onclick = function(){
                                 myTAttack = myTAttack - 9;
                                 break;
                             default:
-                                myTAttack = myTAttack - Math.floor(myTAttack/1.02);
+                                myTAttack = Math.floor(myTAttack/1.02);
                                 break;
                         }
                         break;
@@ -97,7 +98,7 @@ document.getElementById("myButton").onclick = function(){
                                 myTAttack = myTAttack - 8;
                                 break;
                             default:
-                                myTAttack = myTAttack - Math.floor(myTAttack/1.02);
+                                myTAttack = Math.floor(myTAttack/1.02);
                                 break;
                         }
                         break;
